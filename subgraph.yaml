@@ -1,0 +1,57 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: eco
+    network: fuji
+    source:
+      address: "0x0638169f3b57905858e6d9aB1f83741880ddDd57"
+      abi: eco
+      startBlock: 28391748
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - actionCreated
+        - actionUpdated
+        - treeCreated
+        - treeUpdated
+        - userCreated
+        - userUpdatedActions
+        - userUpdatedOverScore
+        - userUpdatedScore
+        - userUpdatedTree
+        - userUpdatedWaste
+        - wasteCreated
+        - wasteUpdated
+      abis:
+        - name: eco
+          file: ./abis/eco.json
+      eventHandlers:
+        - event: actionCreated(uint256,string,string,string,bool,bool,address)
+          handler: handleactionCreated
+        - event: actionUpdated(uint256,bool,bool,address)
+          handler: handleactionUpdated
+        - event: treeCreated(uint256,uint256,string,bool,bool,address)
+          handler: handletreeCreated
+        - event: treeUpdated(uint256,bool,bool,address)
+          handler: handletreeUpdated
+        - event: userCreated(uint256,uint256,uint256,uint256,uint256,uint256,address)
+          handler: handleuserCreated
+        - event: userUpdatedActions(uint256,uint256,uint256,uint256)
+          handler: handleuserUpdatedActions
+        - event: userUpdatedOverScore(uint256,uint256)
+          handler: handleuserUpdatedOverScore
+        - event: userUpdatedScore(uint256,uint256)
+          handler: handleuserUpdatedScore
+        - event: userUpdatedTree(uint256,uint256,uint256,uint256)
+          handler: handleuserUpdatedTree
+        - event: userUpdatedWaste(uint256,uint256,uint256,uint256)
+          handler: handleuserUpdatedWaste
+        - event: wasteCreated(uint256,uint256,bool,bool,bool,address)
+          handler: handlewasteCreated
+        - event: wasteUpdated(uint256,bool,bool,address)
+          handler: handlewasteUpdated
+      file: ./src/eco.ts

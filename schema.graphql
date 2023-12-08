@@ -1,0 +1,137 @@
+type actionCreated @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  action_type: String! # string
+  description: String! # string
+  proof: String! # string
+  status: Boolean! # bool
+  confirmed: Boolean! # bool
+  creator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type actionUpdated @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  status: Boolean! # bool
+  confirmed: Boolean! # bool
+  creator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type treeCreated @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  no_of_trees: BigInt! # uint256
+  locations: String! # string
+  status: Boolean! # bool
+  confirmed: Boolean! # bool
+  creator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type treeUpdated @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  status: Boolean! # bool
+  confirmed: Boolean! # bool
+  creator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type userCreated @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  trees: BigInt! # uint256
+  waste: BigInt! # uint256
+  actions: BigInt! # uint256
+  overall_score: BigInt! # uint256
+  score: BigInt! # uint256
+  user: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type userUpdatedActions @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  actions: BigInt! # uint256
+  overall_score: BigInt! # uint256
+  score: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type userUpdatedOverScore @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  overall_score: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type userUpdatedScore @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  score: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type userUpdatedTree @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  trees: BigInt! # uint256
+  overall_score: BigInt! # uint256
+  score: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type userUpdatedWaste @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  waste: BigInt! # uint256
+  overall_score: BigInt! # uint256
+  score: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type wasteCreated @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  weight: BigInt! # uint256
+  sorted: Boolean! # bool
+  status: Boolean! # bool
+  confirmed: Boolean! # bool
+  creator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type wasteUpdated @entity(immutable: true) {
+  id: Bytes!
+  eco_id: BigInt! # uint256
+  status: Boolean! # bool
+  confirmed: Boolean! # bool
+  creator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
