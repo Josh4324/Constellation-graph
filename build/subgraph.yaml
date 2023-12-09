@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: eco
@@ -28,7 +28,7 @@ dataSources:
         - wasteUpdated
       abis:
         - name: eco
-          file: ./abis/eco.json
+          file: eco/abis/eco.json
       eventHandlers:
         - event: actionCreated(uint256,string,string,string,bool,bool,address)
           handler: handleactionCreated
@@ -54,4 +54,4 @@ dataSources:
           handler: handlewasteCreated
         - event: wasteUpdated(uint256,bool,bool,address)
           handler: handlewasteUpdated
-      file: ./src/eco.ts
+      file: eco/eco.wasm
